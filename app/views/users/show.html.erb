@@ -1,13 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+  <% @user.microposts.each do |micropost|%>
+  <p>
+  <strong>Content:</strong>
+  <%= micropost.content %>
+  <% end %>
+  </p>
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+  <% @user.microposts.each do |micropost|%>
+  <p>
+  <strong>userId:</strong>
+  <%= micropost.user_id %>
+  <% end %>
+  </p>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
